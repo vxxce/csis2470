@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>H1</title>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Roboto&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/css/base.css">
+  <link rel="stylesheet" href="/h/1/css/style.css">
+</head>
+<body>
+  <main>
+    <h1>H1 - JSON</h1>
+    <ul>
+      <li><strong>Name: </strong><span class="name"></span></li>
+      <li><strong>Age: </strong><span class="age"></span></li>
+      <li><strong>Married: </strong><span class="married"></span></li>
+      <li><strong>Classes: </strong><span class="classes"></span></li>
+      <li><strong>Hobby: </strong><span class="hobbies"></span></li>
+    </ul>
+    <button class="loadJson">Load JSON</button>
+    <button class="viewJson">View Raw</button>
+    <div class="raw"></div>
+  </main>
+  <script>
+    
+    // HTML elements
+    let name = document.querySelector(".name")
+    let age = document.querySelector(".age")
+    let classes = document.querySelector(".classes")
+    let married = document.querySelector(".married")
+    let hobbies = document.querySelector(".hobbies")
+    let load = document.querySelector(".loadJson")
+    let view = document.querySelector(".viewJson")
+    let raw = document.querySelector(".raw")
+
+    // JS Object
+    let me = {
+      "name": "Zachary Olpin",
+      "age": 29,
+      "married": false,
+      "classes": [1350, 1410, 1550, 2470],
+      "hobbies": [
+        {"name": "Cycling", "description": "Riding my bike at night when the air is cool."},
+        {"name": "Go", "description": "A board game, also known as Baduk"}
+      ]
+    }
+
+    // Make JSON from Js Object 
+    let json = JSON.stringify(me)
+
+    let loadJson = async () => {
+      // Parse JSON
+      let me = JSON.parse(json)
+      name.textContent = me.name
+      age.textContent = me.age
+      classes.textContent = me.classes.map(n => n.toString()).join(", ")
+      married.textContent = me.married
+      hobbies.textContent = Object.values(me.hobbies[1]).join(" (").concat(")")
+    }
+
+    // Update DOM to display raw JSON
+    let viewJson = async () => {
+      raw.style.padding = "1rem"
+      raw.style.margin = "1rem"
+      raw.style.width = "50vw"
+      raw.style.backgroundColor = "#ffffff"
+      raw.style.border = "2px solid #cccccc"
+      raw.style.borderRadius = "3px"
+      raw.setAttribute("contenteditable", "true")
+      raw.style.overflow = "scroll"
+      raw.textContent = json
+    }
+
+    load.addEventListener("click", async () => loadJson())
+    view.addEventListener("click", async () => viewJson())
+
+  </script>
+</body>
+</html>
