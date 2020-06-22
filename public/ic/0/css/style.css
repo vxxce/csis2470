@@ -1,0 +1,8 @@
+main {
+  border: 2px solid var(--header-text);
+  border-radius: 5px;
+  margin: 1.5rem;
+  padding: 1.5rem;
+  height: calc(100vh - 6rem);
+  width: calc(100vw - 7rem);
+}
