@@ -22,8 +22,16 @@ h1, h2, h3, h4, h5, h6 {
   color: var(--header-text);
 }
 
-ul, ol {
+nav {
+  display: inline-block;
+}
+
+ul, ol, li {
   list-style: none;
+}
+
+a, a:visited, a:active, a:hover {
+  color: inherit;
 }
 
 table {
