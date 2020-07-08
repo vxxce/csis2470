@@ -1,0 +1,11 @@
+.person {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 90vw;
+}
+
+.person > span {
+  width: calc(90vw / 3);
+  text-align: left;
+} 
