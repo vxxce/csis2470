@@ -1,0 +1,124 @@
+{
+    "people": [
+        {
+            "name": "Lev",
+            "lname": "Olpin",
+            "relation": "Brother"
+        },
+        {
+            "name": "Danny",
+            "lname": "Olpin",
+            "relation": "Brother"
+        },
+        {
+            "name": "Ana",
+            "lname": "Olpin",
+            "relation": "Sister"
+        },
+        {
+            "name": "Andrew",
+            "lname": "Olpin",
+            "relation": "Father"
+        },
+        {
+            "name": "Dessa",
+            "lname": "Olpin",
+            "relation": "Mother"
+        },
+        {
+            "name": "Pat",
+            "lname": "Harmon",
+            "relation": "Grandma"
+        },
+        {
+            "name": "Arnie",
+            "lname": "Woodworth",
+            "relation": "Friend"
+        },
+        {
+            "name": "Erick",
+            "lname": "Fromm",
+            "relation": "Friend"
+        },
+        {
+            "name": "Dan",
+            "lname": "Callahan",
+            "relation": "Friend"
+        },
+        {
+            "name": "Anna",
+            "lname": "Stevenson",
+            "relation": "Friend"
+        },
+        {
+            "name": "Ry",
+            "lname": "Bentham",
+            "relation": "Friend"
+        },
+        {
+            "name": "Annabelle",
+            "lname": "Sawyer",
+            "relation": "Friend"
+        },
+        {
+            "name": "Spencer",
+            "lname": "Hayes",
+            "relation": "Friend"
+        },
+        {
+            "name": "Dustin",
+            "lname": "April",
+            "relation": "Friend"
+        },
+        {
+            "name": "Larry",
+            "lname": "Harmon",
+            "relation": "Grandpa"
+        },
+        {
+            "name": "Andrew",
+            "lname": "Hayes",
+            "relation": "Uncle"
+        },
+        {
+            "name": "Jenna",
+            "lname": "Robbins",
+            "relation": "Friend"
+        },
+        {
+            "name": "Jeanette",
+            "lname": "Roland",
+            "relation": "Aunt"
+        },
+        {
+            "name": "Lex",
+            "lname": "Smith",
+            "relation": "Friend"
+        },
+        {
+            "name": "Trent",
+            "lname": "Harmon",
+            "relation": "Uncle"
+        },
+        {
+            "name": "Danny",
+            "lname": "Greyson",
+            "relation": "Friend"
+        },
+        {
+            "name": "Gray",
+            "lname": "Stephens",
+            "relation": "Friend"
+        },
+        {
+            "name": "Aubrey",
+            "lname": "Kenton",
+            "relation": "Cousin"
+        },
+        {
+            "name": "Randy",
+            "lname": "Sawyer",
+            "relation": "Friend"
+        }
+    ]
+}
