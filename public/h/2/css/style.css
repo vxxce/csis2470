@@ -1,10 +1,12 @@
 main {
   margin: 1.5rem;
-  padding: 1.5rem;
 }
 
 ul {
-  margin-top: 2.5rem;
+
+  width: 70vw;
+  padding: 0;
+  margin: 2.5rem auto;
 }
 
 .form-group {
@@ -14,11 +16,17 @@ ul {
 .person {
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
-  width: 90vw;
+  justify-content: left;
+  width: 70vw
 }
 
 .person > span {
-  width: calc(90vw / 3);
+  width: calc(70vw / 3);
   text-align: left;
 } 
+
+.person.header { 
+  font-weight: 700;
+  border-bottom: 0.2rem solid var(--body-text);
+  margin-bottom: 0.2rem;
+}
