@@ -46,9 +46,24 @@ const loadJson = async () => {
 // Appends to document body.
 const makeList = people => {
   let list = document.querySelector('ul')
-  while (list.firstElementChild) {
+  while (list.childElementCount) {
     list.removeChild(list.firstElementChild)
   }
+
+  let headerRow = document.createElement('li')
+  headerRow.classList.add('person')
+  headerRow.classList.add('header')
+  let header1 = document.createElement('span')
+  let header2 = document.createElement('span')
+  let header3 = document.createElement('span')
+  header1.textContent = "Last Name"
+  header2.textContent = "First Name"
+  header3.textContent = "Relation"
+  headerRow.appendChild(header1)
+  headerRow.appendChild(header2)
+  headerRow.appendChild(header3)
+  list.appendChild(headerRow)
+
   for (let p of people) {
     let li = document.createElement('li')
     li.classList.add('person')
