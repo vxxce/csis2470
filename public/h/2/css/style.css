@@ -1,3 +1,16 @@
+main {
+  margin: 1.5rem;
+  padding: 1.5rem;
+}
+
+ul {
+  margin-top: 2.5rem;
+}
+
+.form-group {
+  margin: 1rem;
+}
+
 .person {
   display: flex;
   flex-direction: row;
