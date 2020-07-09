@@ -31,6 +31,7 @@ const peopleFilter = (people, subString) => {
     return (
       p.name.toLowerCase().startsWith(subString)
         || p.lname.toLowerCase().startsWith(subString)
+        || p.relation.toLowerCase().startsWith(subString)
         || p.name.concat(" ").concat(p.lname).toLowerCase().startsWith(subString)
     )
   })
@@ -50,6 +51,7 @@ const makeList = people => {
     list.removeChild(list.firstElementChild)
   }
 
+  // add results col headers
   let headerRow = document.createElement('li')
   headerRow.classList.add('person')
   headerRow.classList.add('header')
@@ -64,6 +66,7 @@ const makeList = people => {
   headerRow.appendChild(header3)
   list.appendChild(headerRow)
 
+  // populate results
   for (let p of people) {
     let li = document.createElement('li')
     li.classList.add('person')
@@ -98,7 +101,11 @@ const populateSelects = people => {
   }
 }
 
-// Load Json, filter rows, sort rows, make DOM updates.
+/**
+ * Creates results list after getting, filtering, sorting json. 
+ * 
+ * @param {string} filter A string to match.
+ */
 const results = async (filter="") => {
   let people = await loadJson()
   let filtered = await peopleFilter(people, filter)
@@ -109,8 +116,14 @@ const results = async (filter="") => {
   makeList(sorted)
 }
 
+
+
 document.body.addEventListener("load", () => results(), true)
 
-//TODO: Debounce this
+// TODO: Debounce this
+// Text search
 document.querySelector('.name').addEventListener('input', e => results(e.target.value.toLowerCase()), true)
 
+// Dropdown search
+document.querySelector('.fname').addEventListener('input', e => results(e.target.value.toLowerCase()), true)
+document.querySelector('.lname').addEventListener('input', e => results(e.target.value.toLowerCase()), true)
