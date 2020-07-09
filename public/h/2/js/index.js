@@ -7,10 +7,6 @@ const peopleSort = people => {
 
   /**
    * Comparator for sorting by last name and then first name.
-   * E.g. Stacey Attison
-   *      Adam   Brown
-   *      Alan   Brown
-   *      Zach   Olpin
    */
   const comparator = (a,b) => {
     if (a.lname.toLowerCase() < b.lname.toLowerCase()) return -1
@@ -31,8 +27,13 @@ const peopleSort = people => {
  * @param {string} subString 
  */
 const peopleFilter = (people, subString) => {
-  // Todo: this is just filtering by first name atm--will have to abstract 
-  return people.filter(p => p.name.startsWith(subString))
+  return people.filter(p => {
+    return (
+      p.name.toLowerCase().startsWith(subString)
+        || p.lname.toLowerCase().startsWith(subString)
+        || p.name.concat(" ").concat(p.lname).toLowerCase().startsWith(subString)
+    )
+  })
 }
 
 const loadJson = async () => {
@@ -44,10 +45,14 @@ const loadJson = async () => {
 // Makes <ul> with each <li> containing three spans. One for last name, first name, and relation.
 // Appends to document body.
 const makeList = people => {
-  const list = document.createElement("ul")
+  let list = document.querySelector('ul')
+  while (list.firstElementChild) {
+    list.removeChild(list.firstElementChild)
+  }
   for (let p of people) {
     let li = document.createElement('li')
     li.classList.add('person')
+    li.id = p.name.toLowerCase().concat(p.lname.toLowerCase())
     let name = document.createElement('span')
     let lname = document.createElement('span')
     let relation = document.createElement('span')
@@ -59,20 +64,38 @@ const makeList = people => {
     li.appendChild(relation)
     list.appendChild(li)
   }
-  document.body.appendChild(list)
+  document.querySelector('main').appendChild(list)
+}
+
+// Add option elements for all names
+const populateSelects = people => {
+  let fname = document.querySelector('.fname')
+  let lname = document.querySelector('.lname')
+  for (let p of people) {
+    let fOption = document.createElement('option')
+    let lOption = document.createElement('option')
+    fOption.value = p.name
+    fOption.textContent = p.name
+    lOption.value = p.lname
+    lOption.textContent = p.lname
+    fname.appendChild(fOption)
+    lname.appendChild(lOption)
+  }
 }
 
 // Load Json, filter rows, sort rows, make DOM updates.
-const results = async () => {
+const results = async (filter="") => {
   let people = await loadJson()
-  // Todo: Dom and design architecture not ready for filtering, this filters no one for now.
-  let filtered = await peopleFilter(people, "")
+  let filtered = await peopleFilter(people, filter)
   let sorted = peopleSort(filtered)
+  if (document.querySelector('.fname').childElementCount <= 1) {
+    populateSelects(sorted)
+  }
   makeList(sorted)
 }
 
-results()
+document.body.addEventListener("load", () => results(), true)
 
-
-
+//TODO: Debounce this
+document.querySelector('.name').addEventListener('input', e => results(e.target.value.toLowerCase()), true)
 
