@@ -11,18 +11,27 @@
       $.getJSON('./js/hobbies.json', json => {
         $.each(json, (k, hobbies) => {
           $.each(hobbies, (k, hobby) => {
+            html += "<div>"
             html += `<h2>${hobby.name}</h2>`
-            html += `<img src="./img/${hobby.src}"/>`
+            html += `<img src="./img/${hobby.src}" />` // These area all just "#" right now
             html += `<p>${hobby.description}</p>`
+            html += "</div>"
           })
         })
-        $('#hobbies').html(html)
+        $('#hobbies').html(html).cycle({
+          fx: "fade",
+          pause: "1",
+          prev: "#prev",
+          next: "#next",
+        })
       })
     })
   </script>
   <title>H3 - Carousel</title>
 </head>
 <body>
+<button id="prev">Previous</button>
+<button id="next">Next</button>
 <div id="hobbies">
 </div>
 </body>
