@@ -3,32 +3,32 @@
     {
       "name": "Making music",
       "description": "I enjoy playing piano/keys, guitar, drums.",
-      "src": "music.jpg"
+      "src": "#"
     },
     {
       "name": "Go",
       "description": "Go, AKA \"Baduk\" or \"Weiqi\" is an ancient Chinese board game that was popularized in the West recently when Google's DeepMind created the first artificial intelligence to consistently beat the worlds best human players.",
-      "src": "go.jpg"
+      "src": "#"
     },
     {
       "name": "Cycling",
       "description": "During the summer, one of my favorite things to do is ride my bike around downtown in the middle of the night when it's cool and the streets are mostly empty.",
-      "src": "cycling.jpg"
+      "src": "#"
     },
     {
       "name": "Programming",
       "description": "Programming is the closest thing to sorcery in this world. I spend much of my free time not doing my schoolwork (all CSIS courses) and instead working on little personal projects and learning new things in the field.",
-      "src": "programming.jpg"
+      "src": "#"
     },
     {
       "name": "Starting and never finishing projects",
       "description": "My computer is a graveyard of unfinished personal projects that *one day* I'll get back around to.",
-      "src": "projects.jpg"
+      "src": "#"
     },
     {
       "name": "Watching film/television and reading books",
       "description": "I get all my non-fiction in books and fiction in film and television. My life also happens to be a television show--a tragicomedy (although I'm not always sure what's humor and what's tragedy). Unlike the Truman Show, I imagine my show is watched by some unknowable intelligence and I'm content with the whole arrangement.",
-      "src": "media.jpg"
+      "src": "#"
     }
   ]
 }
