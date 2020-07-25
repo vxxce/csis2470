@@ -21,7 +21,7 @@ $(document).ready(function() {
       next: "#next", // Select to cycle to next
       sync: true, // Transition slides in sync
       pause: true, // Pause playback on hover
-      timeout: 6000, // 6 second default for each slide
+      timeout: 8000, // 8 second default for each slide
     })
   })
 })
