@@ -26,11 +26,13 @@ button {
 
 #prev {
     left: 4rem;
+    -webkit-animation: 8s ease-out 0s infinite normal bounce-left;
     animation: 8s ease-out 0s infinite normal bounce-left;
 }
 
 #next {
     right: 4rem;
+    -webkit-animation: 8s ease-out 0s infinite normal bounce-right;
     animation: 8s ease-out 0s infinite normal bounce-right;
 }
 
@@ -40,26 +42,63 @@ button:hover {
 }
 
 
-@keyframes bounce-left {
+@-webkit-keyframes bounce-left {
     0%, 36%, 36%, 100% {
+        -webkit-transform: translateX(10%);
         transform: translateX(10%);
     }
     4%, 18%, 32% {
+        -webkit-transform: translateX(15%);
         transform: translateX(15%);
     }
     11%, 25% {
+        -webkit-transform: translateX(0%);
+        transform: translateX(0%);
+    }
+}
+
+
+@keyframes bounce-left {
+    0%, 36%, 36%, 100% {
+        -webkit-transform: translateX(10%);
+        transform: translateX(10%);
+    }
+    4%, 18%, 32% {
+        -webkit-transform: translateX(15%);
+        transform: translateX(15%);
+    }
+    11%, 25% {
+        -webkit-transform: translateX(0%);
+        transform: translateX(0%);
+    }
+}
+
+@-webkit-keyframes bounce-right {
+    0%, 36%, 36%, 100% {
+        -webkit-transform: translateX(-10%);
+        transform: translateX(-10%);
+    }
+    4%, 18%, 32% {
+        -webkit-transform: translateX(-15%);
+        transform: translateX(-15%);
+    }
+    11%, 25% {
+        -webkit-transform: translateX(0%);
         transform: translateX(0%);
     }
 }
 
 @keyframes bounce-right {
     0%, 36%, 36%, 100% {
+        -webkit-transform: translateX(-10%);
         transform: translateX(-10%);
     }
     4%, 18%, 32% {
+        -webkit-transform: translateX(-15%);
         transform: translateX(-15%);
     }
     11%, 25% {
+        -webkit-transform: translateX(0%);
         transform: translateX(0%);
     }
 }
