@@ -1,9 +1,28 @@
+/* browserslist: '> 0.1%, not dead, not op_mini all' */
+/* extends '/css/base.css' */
+
 main {
     width: 700px;
     margin: 2rem auto;
     display: flex;
     align-items: stretch;
     justify-content: center;
+}
+
+h2 {
+    margin: 1.5rem 0;
+    font-size: 2.5rem;
+    width: 700px;
+    text-align: center;
+}
+
+p {
+    box-sizing: border-box;
+    font-size: 1.5rem;
+    line-height: 2rem;
+    width: calc(700px - 6px);
+    padding: 1rem;
+    border: 3px solid #55627d;
 }
 
 img {
@@ -24,6 +43,11 @@ button {
     z-index: 1;
 }
 
+button:hover {
+    color: white;
+    cursor: pointer;
+}
+
 #prev {
     left: 4rem;
     -webkit-animation: 8s ease-out 0s infinite normal bounce-left;
@@ -36,11 +60,15 @@ button {
     animation: 8s ease-out 0s infinite normal bounce-right;
 }
 
-button:hover {
-    color: white;
-    cursor: pointer;
+#hobbies {
+    width: 700px;
+    min-width: 700px;
+    height: 900px;
+    z-index: 0;
 }
 
+
+/******** ANIMATIONS **********************/
 
 @-webkit-keyframes bounce-left {
     0%, 36%, 36%, 100% {
@@ -101,27 +129,4 @@ button:hover {
         -webkit-transform: translateX(0%);
         transform: translateX(0%);
     }
-}
-
-h2 {
-    margin: 1.5rem 0;
-    font-size: 2.5rem;
-    width: 700px;
-    text-align: center;
-}
-
-p {
-    box-sizing: border-box;
-    font-size: 1.5rem;
-    line-height: 2rem;
-    width: calc(700px - 6px);
-    padding: 1rem;
-    border: 3px solid #55627d;
-}
-
-#hobbies {
-    width: 700px;
-    min-width: 700px;
-    height: 900px;
-    z-index: 0;
 }
