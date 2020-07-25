@@ -1,8 +1,9 @@
 main {
-    width: max-content;
+    width: 700px;
     margin: 2rem auto;
     display: flex;
-    align-items: center;
+    align-items: stretch;
+    justify-content: center;
 }
 
 img {
@@ -11,22 +12,60 @@ img {
 }
 
 button {
-    height: 5.5rem;
-    margin: 2rem;
-    font-size: 1.5rem;
     background: none;
     border: none;
-    text-transform: uppercase;
-    color: #55627d;
+    position: relative;
+    top: calc(3rem + 48px);
+    width: 6rem;
+    height: 500px;
+    padding: 0;
+    font-size: 6rem;
+    color: rgba(255, 255, 255, 0.5);
+    z-index: 1;
+}
+
+#prev {
+    left: 4rem;
+    animation: 8s ease-out 0s infinite normal bounce-left;
+}
+
+#next {
+    right: 4rem;
+    animation: 8s ease-out 0s infinite normal bounce-right;
 }
 
 button:hover {
-    color: #678993;
+    color: white;
     cursor: pointer;
-    text-decoration: underline;
+}
+
+
+@keyframes bounce-left {
+    0%, 36%, 36%, 100% {
+        transform: translateX(10%);
+    }
+    4%, 18%, 32% {
+        transform: translateX(15%);
+    }
+    11%, 25% {
+        transform: translateX(0%);
+    }
+}
+
+@keyframes bounce-right {
+    0%, 36%, 36%, 100% {
+        transform: translateX(-10%);
+    }
+    4%, 18%, 32% {
+        transform: translateX(-15%);
+    }
+    11%, 25% {
+        transform: translateX(0%);
+    }
 }
 
 h2 {
+    margin: 1.5rem 0;
     font-size: 2.5rem;
     width: 700px;
     text-align: center;
@@ -44,5 +83,6 @@ p {
 #hobbies {
     width: 700px;
     min-width: 700px;
-    height: max-content;
+    height: 900px;
+    z-index: 0;
 }
