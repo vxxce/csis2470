@@ -1,0 +1,48 @@
+main {
+    width: max-content;
+    margin: 2rem auto;
+    display: flex;
+    align-items: center;
+}
+
+img {
+    width: 700px;
+    height: 500px;
+}
+
+button {
+    height: 5.5rem;
+    margin: 2rem;
+    font-size: 1.5rem;
+    background: none;
+    border: none;
+    text-transform: uppercase;
+    color: #55627d;
+}
+
+button:hover {
+    color: #678993;
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+h2 {
+    font-size: 2.5rem;
+    width: 700px;
+    text-align: center;
+}
+
+p {
+    box-sizing: border-box;
+    font-size: 1.5rem;
+    line-height: 2rem;
+    width: calc(700px - 6px);
+    padding: 1rem;
+    border: 3px solid #55627d;
+}
+
+#hobbies {
+    width: 700px;
+    min-width: 700px;
+    height: max-content;
+}
