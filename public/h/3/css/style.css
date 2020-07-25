@@ -50,14 +50,14 @@ button:hover {
 
 #prev {
     left: 4rem;
-    -webkit-animation: 8s ease-out 0s infinite normal bounce-left;
-    animation: 8s ease-out 0s infinite normal bounce-left;
+    -webkit-animation: 6s ease-out 0s infinite normal bounce-left;
+    animation: 6s ease-out 0s infinite normal bounce-left;
 }
 
 #next {
     right: 4rem;
-    -webkit-animation: 8s ease-out 0s infinite normal bounce-right;
-    animation: 8s ease-out 0s infinite normal bounce-right;
+    -webkit-animation: 6s ease-out 0s infinite normal bounce-right;
+    animation: 6s ease-out 0s infinite normal bounce-right;
 }
 
 #hobbies {
