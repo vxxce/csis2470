@@ -3,36 +3,26 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="author" content="Zachary Olpin">
+  <!-- Global (base) stylesheet-->
+  <link rel="stylesheet" href="../../css/base.css">
+  <!-- Page-specific extension of global styles -->
+  <link rel="stylesheet" href="./css/style.css">
+  <!-- Jquery core library -->
   <script src="./js/jquery.js"></script>
+  <!-- Jquery cycle plugin -->
   <script src="./js/jquery-cycle-all.js"></script>
-  <script>
-    $(document).ready(() => {
-      let html = ""
-      $.getJSON('./js/hobbies.json', json => {
-        $.each(json, (k, hobbies) => {
-          $.each(hobbies, (k, hobby) => {
-            html += "<div>"
-            html += `<h2>${hobby.name}</h2>`
-            html += `<img src="./img/${hobby.src}" />` // These area all just "#" right now
-            html += `<p>${hobby.description}</p>`
-            html += "</div>"
-          })
-        })
-        $('#hobbies').html(html).cycle({
-          fx: "fade",
-          pause: "1",
-          prev: "#prev",
-          next: "#next",
-        })
-      })
-    })
-  </script>
+  <!-- Callback to execute when DOM loaded -->
+  <script src="./js/slideShow.js"></script>
   <title>H3 - Carousel</title>
 </head>
 <body>
-<button id="prev">Previous</button>
-<button id="next">Next</button>
-<div id="hobbies">
-</div>
+  <main>
+    <button id="prev">Previous</button>
+    <div id="hobbies">
+    <!--Container for gallery, loaded asynchronously-->
+    </div>
+    <button id="next">Next</button>
+  </main>
 </body>
 </html>
