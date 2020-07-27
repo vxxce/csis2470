@@ -5,14 +5,96 @@
     <meta name="viewport"
           content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="/h/4/css/jquery-ui.min.css">
-    <link rel="stylesheet" href="/css/base.css">
-    <link rel="stylesheet" href="/h/4/css/style.css">
+    <!--    <link rel="stylesheet" href="/css/base.css">-->
+    <link rel="stylesheet" href="/h/4/static/jquery/jquery-ui.min.css">
+    <link rel="stylesheet" href="/h/4/static/css/style.css">
+    <link rel="stylesheet" href="./static/css/style.css">
     <script src="/h/4/js/jquery.js"></script>
     <script src="/h/4/js/jquery-ui.min.js"></script>
+    <script>
+
+      // Utility function for building elements with textContent and attribute list
+      const elementBuilder = (tag, textContent = null, attributes) => {
+        const element = document.createElement(tag)
+        if (textContent) {
+          const text = document.createTextNode(textContent)
+          element.appendChild(text)
+        }
+        attributes.forEach(attrVal => element.setAttribute(attrVal[0], attrVal[1]))
+        return element
+      }
+
+      $(document).ready(() => {
+        const tagContainer = document.querySelector('.tagContainer')
+
+        const accordion = $('#accordion')
+        accordion.accordion({heightStyle: 'content'})
+
+        document.querySelectorAll('.tagInput').forEach(el => el.addEventListener('keydown', e => {
+            if (e.key == ',' || e.key == 'Enter') {
+              e.preventDefault()
+              const tag = elementBuilder('span', e.target.value.trim(), [['class', 'tag'], ['id', `hobby${tagContainer.childElementCount + 1}`]])
+              tag.addEventListener('click', e => $(e.target).hide({
+                duration: 200,
+                complete: () => e.target.remove()
+              }, true))
+              $(e.target).next().append(tag)
+              e.target.value = ''
+            }
+          }))
+
+        document.querySelectorAll('.lastFocus').forEach(el => el.addEventListener('keydown', e => {
+          if (e.key == "Tab") {
+            let next = $('#accordion').accordion("option", "active") + 1
+            $('#accordion').accordion("option", "active", next)
+          }
+        }))
+
+      })
+    </script>
     <title>H4</title>
 </head>
 <body>
+<main>
+    <div id="accordion">
+        <h1>Personal</h1>
+        <div>
+            <div>
+                <label for="fname">Something</label>
+                <input id="fname" type="text">
+            </div>
+            <div>
+                <label for="lname">Something</label>
+                <input id="lname" type="text">
+            </div>
+            <div>
+                <label for="age">Something</label>
+                <input class="lastFocus" id="age" type="number">
+            </div>
+        </div>
+        <h1>Hobbies</h1>
+        <div>
+            <div>
+                <input class="tagInput lastFocus" type="text" name="hobbies" id="hobbies" placeholder="Add a hobby">
+                <div class="tagContainer"></div>
+            </div>
+        </div>
+        <h1>School</h1>
+        <div>
+            <button>button</button>
+            <button>button</button>
+            <label>Something</label>
+            <input class="lastFocus" type="text">
+        </div>
 
+        <h1>Music</h1>
+        <div>
+            <div>
+                <input class="tagInput" type="text" name="artists" id="artists" placeholder="Add an artist">
+                <div class="tagContainer"></div>
+            </div>
+        </div>
+    </div>
+</main>
 </body>
 </html>
