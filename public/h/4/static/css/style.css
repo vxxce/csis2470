@@ -1,0 +1,37 @@
+main {
+    margin: 2rem auto;
+    width: 50vw;
+}
+
+textarea {
+    display: block;
+}
+
+.tagContainer {
+    display: flex;
+    flex-wrap: wrap;
+    min-width: 10rem;
+    max-width: 80%;
+    height: max-content;
+    justify-content: flex-start;
+    margin-top: 1rem;
+}
+
+.tag {
+    padding: 0.3em 0.6em;
+    margin: 0.2rem 0.4rem 0.2rem 0;
+    background-color: #4b9318;
+    color: white;
+    border-radius: 0.5em;
+}
+
+.tag:after {
+    content: "×";
+    color: black;
+    font-size: 1.2rem;
+    padding-left: 0.6em;
+}
+
+.tag:hover {
+    cursor: pointer;
+}
