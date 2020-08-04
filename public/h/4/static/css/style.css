@@ -61,14 +61,18 @@ input[type='number'] {
     border: 0;
 }
 
+span {
+    margin-right: 1rem;
+}
+
+.warning {
+    color: #4b9318;
+}
+
 .invalid {
     color: #ba3030;
 }
 
-.warning, span {
-    margin-right: 1rem;
-    color: #4b9318;
-}
 
 h1.accordion-header-invalid {
     background-color: #d77575;
