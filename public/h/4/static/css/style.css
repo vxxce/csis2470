@@ -1,17 +1,16 @@
 main {
     margin: 2rem auto;
-    width: 50vw;
+    width: 20rem;
 }
 
-textarea {
-    display: block;
+input {
+    height: 1.44rem;
 }
 
 .tagContainer {
     display: flex;
     flex-wrap: wrap;
-    min-width: 10rem;
-    max-width: 80%;
+    width: 100%;
     height: max-content;
     justify-content: flex-start;
     margin-top: 1rem;
@@ -34,4 +33,49 @@ textarea {
 
 .tag:hover {
     cursor: pointer;
+}
+
+.form-row {
+    display: grid;
+    grid-template-columns: 5.5rem auto;
+    margin-bottom: 1rem;
+    align-items: center;
+}
+
+input[type='number'] {
+    width: 3rem;
+}
+
+.submit-row {
+    margin-top: 1rem;
+    display: flex;
+    justify-content: flex-end;
+    align-items: baseline;
+}
+
+#form-submit {
+    background-color: #b5d5e8;
+    font-weight: 700;
+    font-size: 1rem;
+    border-radius: 2rem;
+    border: 0;
+}
+
+.invalid {
+    color: #ba3030;
+}
+
+.warning, span {
+    margin-right: 1rem;
+    color: #4b9318;
+}
+
+h1.accordion-header-invalid {
+    background-color: #d77575;
+}
+
+@media screen and (min-width: 700px) {
+    main {
+        width: 25rem;
+    }
 }
