@@ -1,12 +1,12 @@
 main {
     margin: 2rem auto;
-    width: 20rem;
+    width: 18rem;
 }
-
-input {
-    height: 1.44rem;
+label {
+    text-align: right;
+    margin-right: 1rem;
 }
-
+input {height: 1.44rem;}
 .tagContainer {
     display: flex;
     flex-wrap: wrap;
@@ -15,7 +15,6 @@ input {
     justify-content: flex-start;
     margin-top: 1rem;
 }
-
 .tag {
     padding: 0.3em 0.6em;
     margin: 0.2rem 0.4rem 0.2rem 0;
@@ -23,36 +22,27 @@ input {
     color: white;
     border-radius: 0.5em;
 }
-
 .tag:after {
     content: "×";
     color: black;
     font-size: 1.2rem;
     padding-left: 0.6em;
 }
-
-.tag:hover {
-    cursor: pointer;
-}
-
+.tag:hover {cursor: pointer;}
+#accordion > .form-group {padding: 0;}
 .form-row {
     display: grid;
-    grid-template-columns: 5.5rem auto;
-    margin-bottom: 1rem;
+    grid-template-columns: 2fr 4fr;
+    margin: 1rem;
     align-items: center;
 }
-
-input[type='number'] {
-    width: 3rem;
-}
-
+input[type='number'] {width: 3rem;}
 .submit-row {
     margin-top: 1rem;
     display: flex;
     justify-content: flex-end;
     align-items: baseline;
 }
-
 #form-submit {
     background-color: #b5d5e8;
     font-weight: 700;
@@ -60,26 +50,11 @@ input[type='number'] {
     border-radius: 2rem;
     border: 0;
 }
-
-span {
-    margin-right: 1rem;
-}
-
-.warning {
-    color: #4b9318;
-}
-
-.invalid {
-    color: #ba3030;
-}
-
-
-h1.accordion-header-invalid {
-    background-color: #d77575;
-}
-
+span {margin-right: 1rem;}
+.warning {color: #4b9318;}
+.invalid {color: #ba3030;}
+h1.accordion-header-invalid {background-color: #d77575;}
+#accordion > .accordion-h1 {font-size: 1.3rem;}
 @media screen and (min-width: 700px) {
-    main {
-        width: 25rem;
-    }
+    main {width: 25rem;}
 }
