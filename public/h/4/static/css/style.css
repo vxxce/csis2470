@@ -18,7 +18,7 @@ input {height: 1.44rem;}
 .tag {
     padding: 0.3em 0.6em;
     margin: 0.2rem 0.4rem 0.2rem 0;
-    background-color: #4b9318;
+    background-color: #85a3af;
     color: white;
     border-radius: 0.5em;
 }
@@ -38,7 +38,7 @@ input {height: 1.44rem;}
 }
 input[type='number'] {width: 3rem;}
 .submit-row {
-    margin-top: 1rem;
+    margin: 1rem;
     display: flex;
     justify-content: flex-end;
     align-items: baseline;
