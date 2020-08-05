@@ -77,6 +77,7 @@
           }
         }))
 
+        // Fields requiring validation
         const fields = {
           personal: {
             fname: $('#fname'),
@@ -95,18 +96,26 @@
           }
         }
 
+        // Validate required fields filled in on click event for submit button
         const submit = $('#form-submit')
         submit.click(function() {
+          // Reset anything with previously applied 'invalid' class
           $('.invalid').each(function() {
             $(this).removeClass('invalid')
           })
+          // Reset anything with previously applied 'accordion-header-invalid' class
           $('.accordion-header-invalid').each(function() {
             $(this).removeClass('accordion-header-invalid')
           })
-            let invalid = false
+
+          // Invalidity flag, init false
+          let invalid = false
+          // Iterate through and validate fields.
+          // Selects, text and number inputs need value other than ""
           Object.values(fields).forEach(elObj => Object.values(elObj).forEach(field => {
             let type = field.attr('type')
             if (field.hasClass('tagInput')) {
+              // Check fields corresponding tagsContainer
               if (field.parent().next().children().length === 0) {
                 invalid = true
                 field.prev().addClass("invalid")
@@ -120,7 +129,10 @@
               }
             }
           }))
+
+          // Produce prompt alerting user to missing required fields
             if (invalid) submit.prev().replaceWith(elementBuilder('span', 'Required fields are missing.', [["class", "invalid warning"]]))
+            // Notify explicitly that all valid in place of actually posting.
             else submit.prev().replaceWith(elementBuilder('span', 'Success. Post data.', []))
         })
       })
