@@ -24,7 +24,7 @@
       }
 
 
-      $(document).ready(function() {
+      $(document).ready(function () {
 
         // Make accordion from main > div
         const accordion = $('#accordion')
@@ -36,38 +36,38 @@
         Array(4)
           .fill(Number(new Date().getFullYear()))
           .map((now, ind) => [["Spring", now], ["Summer", now], ["Fall", now]]
-             .map(seasonNow => [seasonNow[0], seasonNow[1] + ind].join(' '))
+            .map(seasonNow => [seasonNow[0], seasonNow[1] + ind].join(' '))
           )
           .flat()
           .forEach(semester => {
             graduationSelect.append(
-                elementBuilder(
-                    'option',
-                    semester,
-                    [["value", semester.slice(0,3).concat(semester.slice(semester.length - 2))]]
-                )
+              elementBuilder(
+                'option',
+                semester,
+                [["value", semester.slice(0, 3).concat(semester.slice(semester.length - 2))]]
+              )
             )
           })
 
         // Add "tags" below hobbies and artists inputs on keydown ',' or 'Enter'.
         const tagContainer = document.querySelector('.tagContainer')
         document.querySelectorAll('.tagInput').forEach(el => el.addEventListener('keydown', e => {
-            if (e.key === ',' || e.key === 'Enter') {
-              e.preventDefault()
-              const tag = elementBuilder(
-                'span',
-                e.target.value.trim(),
-                [['class', 'tag'], ['id', `hobby${tagContainer.childElementCount + 1}`]]
-              )
-              // Hide (with $ fx) and remove tags on click.
-              tag.addEventListener('click', e => $(e.target).hide({
-                duration: 200,
-                complete: () => e.target.remove()
-              }, true))
-                $(e.target).parent().next().append(tag)
-              e.target.value = ''
-            }
-          }))
+          if (e.key === ',' || e.key === 'Enter') {
+            e.preventDefault()
+            const tag = elementBuilder(
+              'span',
+              e.target.value.trim(),
+              [['class', 'tag'], ['id', `hobby${tagContainer.childElementCount + 1}`]]
+            )
+            // Hide (with $ fx) and remove tags on click.
+            tag.addEventListener('click', e => $(e.target).hide({
+              duration: 200,
+              complete: () => e.target.remove()
+            }, true))
+            $(e.target).parent().next().append(tag)
+            e.target.value = ''
+          }
+        }))
 
         // On last input of each accordion section, open next section on 'Tab' keydown
         document.querySelectorAll('.lastFocus').forEach(el => el.addEventListener('keydown', e => {
@@ -84,7 +84,7 @@
             lname: $('#lname'),
             age: $('#age')
           },
-          hobbies : {
+          hobbies: {
             hobbies: $('#hobbies')
           },
           school: {
@@ -98,13 +98,13 @@
 
         // Validate required fields filled in on click event for submit button
         const submit = $('#form-submit')
-        submit.click(function() {
+        submit.click(function () {
           // Reset anything with previously applied 'invalid' class
-          $('.invalid').each(function() {
+          $('.invalid').each(function () {
             $(this).removeClass('invalid')
           })
           // Reset anything with previously applied 'accordion-header-invalid' class
-          $('.accordion-header-invalid').each(function() {
+          $('.accordion-header-invalid').each(function () {
             $(this).removeClass('accordion-header-invalid')
           })
 
@@ -131,9 +131,9 @@
           }))
 
           // Produce prompt alerting user to missing required fields
-            if (invalid) submit.prev().replaceWith(elementBuilder('span', 'Required fields are missing.', [["class", "invalid warning"]]))
-            // Notify explicitly that all valid in place of actually posting.
-            else submit.prev().replaceWith(elementBuilder('span', 'Success. Post data.', []))
+          if (invalid) submit.prev().replaceWith(elementBuilder('span', 'Required fields are missing.', [["class", "invalid warning"]]))
+          // Notify explicitly that all valid in place of actually posting.
+          else submit.prev().replaceWith(elementBuilder('span', 'Success. Post data.', []))
         })
       })
     </script>
@@ -145,12 +145,12 @@
         <h1 class="accordion-h1">Personal</h1>
         <div class="form-group">
             <div class="form-row">
-                <label for="fname" >First name</label>
+                <label for="fname">First name</label>
                 <input id="fname" type="text">
             </div>
             <div class="form-row">
-                <label for="lname" >Last name</label>
-                <input  id="lname" type="text">
+                <label for="lname">Last name</label>
+                <input id="lname" type="text">
             </div>
             <div class="form-row">
                 <label for="age">Age</label>
@@ -161,9 +161,10 @@
         <div class="form-group">
             <div class="form-row">
                 <label for="hobbies">Your hobbies</label>
-                <input class="tagInput lastFocus" type="text" name="hobbies" id="hobbies" title="Separate hobbies by comma">
+                <input class="tagInput lastFocus" type="text" name="hobbies" id="hobbies"
+                       title="Separate hobbies by comma">
             </div>
-                <div id="hobbies-tags" class="tagContainer"></div>
+            <div id="hobbies-tags" class="tagContainer"></div>
         </div>
         <h1 class="accordion-h1">School</h1>
         <div class="form-group">
@@ -174,7 +175,7 @@
             <div class="form-row">
                 <label for="graduation">Graduation</label>
                 <select id="graduation" class="lastFocus">
-                    <option value=""> -- </option>
+                    <option value=""> --</option>
                 </select>
             </div>
         </div>
@@ -182,14 +183,14 @@
         <div class="form-group">
             <div class="form-row">
                 <label>Favorite artists</label>
-                <input class="tagInput" type="text" name="artists" id="artists" title="Separate artists by comma" >
+                <input class="tagInput" type="text" name="artists" id="artists" title="Separate artists by comma">
             </div>
-                <div id="artists-tags" class="tagContainer"></div>
+            <div id="artists-tags" class="tagContainer"></div>
         </div>
     </div>
     <div class="submit-row">
         <span></span>
-    <button class="ui-button" id="form-submit">SUBMIT</button>
+        <button class="ui-button" id="form-submit">SUBMIT</button>
     </div>
 </main>
 </body>
