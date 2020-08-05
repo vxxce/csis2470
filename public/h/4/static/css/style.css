@@ -38,7 +38,7 @@ input {height: 1.44rem;}
 }
 input[type='number'] {width: 3rem;}
 .submit-row {
-    margin-right: 1rem;
+    margin-top: 1rem;
     display: flex;
     justify-content: flex-end;
     align-items: baseline;
