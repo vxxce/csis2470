@@ -23,19 +23,49 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 nav {
-  display: inline-block;
+  display: block;
+  width: max-content;
+  margin: 1rem auto;
+}
+
+nav a {
+  display: block;
+  font-family: 'Roboto', Helvetica, Arial, sans-serif;
+  font-size: 3rem;
+  margin: 2rem;
+  padding: 0.6rem;
+  border: 5px solid #55403c;
+  color: #55403c;
+  border-radius: 3rem;
+}
+
+nav a:hover {
+  color: #a89897;
+  text-decoration: none;
+  border: 5px solid #a89897;
 }
 
 ul, ol, li {
   list-style: none;
+  padding: 0
 }
 
-a, a:visited, a:active, a:hover {
-  color: inherit;
+a, a:visited, a:active {
   text-decoration: none;
 }
 
 table {
 	border-collapse: collapse;
 	border-spacing: 0;
+}
+
+@media screen and (min-width: 800px) {
+  nav a {
+    display: inline-block;
+    margin: 0.7rem;
+  }
+
+  li {
+    display: inline-block;
+  }
 }
