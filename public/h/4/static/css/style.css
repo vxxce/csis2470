@@ -1,12 +1,16 @@
 main {
     margin: 2rem auto;
-    width: 18rem;
+    width: 17rem;
 }
+
 label {
-    text-align: right;
-    margin-right: 1rem;
+    margin-bottom: 0.5em
 }
-input {height: 1.44rem;}
+
+input {
+    height: 1.44rem;
+}
+
 .tagContainer {
     display: flex;
     flex-wrap: wrap;
@@ -15,6 +19,7 @@ input {height: 1.44rem;}
     justify-content: flex-start;
     margin: 1rem;
 }
+
 .tag {
     padding: 0.3em 0.6em;
     margin: 0.2rem 0.4rem 0.2rem 0;
@@ -22,39 +27,85 @@ input {height: 1.44rem;}
     color: white;
     border-radius: 0.5em;
 }
+
 .tag:after {
     content: "×";
-    color: black;
+    color: #fff;
     font-size: 1.2rem;
     padding-left: 0.6em;
 }
-.tag:hover {cursor: pointer;}
-#accordion > .form-group {padding: 0;}
-.form-row {
-    display: grid;
-    grid-template-columns: 2fr 4fr;
-    margin: 1rem;
-    align-items: center;
+
+.tag:hover {
+    cursor: pointer;
 }
-input[type='number'] {width: 3rem;}
+
+#accordion > .form-group {
+    padding: 0;
+}
+
+.form-row {
+    display: flex;
+    flex-direction: column;
+    margin: 1rem;
+}
+
+input[type='number'] {
+    width: 3rem;
+}
+
 .submit-row {
     margin-top: 1rem;
     display: flex;
     justify-content: flex-end;
     align-items: baseline;
 }
+
 #form-submit {
+    color: var(--body-text);
     background-color: #b5d5e8;
     font-weight: 700;
     font-size: 1rem;
     border-radius: 2rem;
-    border: 0;
+    border: 2px solid transparent;
 }
-span {margin-right: 1rem;}
-.warning {color: #4b9318;}
-.invalid {color: #ba3030;}
-h1.accordion-header-invalid {background-color: #d77575;}
-#accordion > .accordion-h1 {font-size: 1.3rem;}
+
+#form-submit:hover {
+    background-color: #c1e0f3;
+}
+
+#form-submit:active {
+    border: 2px solid #222;
+}
+
+span {
+    margin-right: 1rem;
+}
+
+.warning {
+    color: #4b9318;
+}
+
+.invalid {
+    color: #ba3030;
+}
+
+.ui-tooltip {
+    font-size: 0.75rem;
+    padding: 0.1rem;
+}
+
+h1.accordion-header-invalid {
+    background-color: #c17777;
+    color: #fff;
+}
+
+#accordion > .accordion-h1 {
+    font-size: 1.4rem;
+    letter-spacing: 2px;
+}
+
 @media screen and (min-width: 700px) {
-    main {width: 25rem;}
+    main {
+        width: 25rem;
+    }
 }
