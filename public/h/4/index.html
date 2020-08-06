@@ -29,7 +29,7 @@
         // Make accordion from main > div
         const accordion = $('#accordion')
         accordion.accordion({heightStyle: 'content'})
-        $(document).tooltip() // Tooltips for input fields
+        $(document).tooltip({position: { my: "right top-35", at: "right top", collision: "flipfit" }}) // Tooltips for input fields
 
         // Populate Graduation select with Semesters 4 years out
         const graduationSelect = $('#graduation')
