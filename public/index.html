@@ -17,11 +17,45 @@
       display: flex;
       flex-direction: row;
       justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
     }
 
     ul, li {
       display: inline-block;
     }
+
+    nav a {
+      color: var(--body-text);
+      border: 0;
+      font-size: 1.5rem;
+      transform: rotate(-35deg);
+    }
+
+    nav a:hover {
+      color: #467282;
+      border: 0;
+    }
+
+    header nav {
+      margin: 0;
+    }
+
+    header h1 {
+      margin: 0;
+    }
+
+    @media screen and (max-width: 400px) {
+      header h1 {
+        font-size: 1.5rem;
+      }
+
+      nav a {
+        margin: 0;
+      }
+
+    }
+
   </style>
 </head>
 
@@ -31,8 +65,7 @@
       <h1>Home</h1>
       <nav>
         <ul>
-          <li><a href="/h/">H</a></li>
-          <li><a href="/ic/">IC</a></li>
+          <li><a href="/h/">HOMEWORK</a></li>
         </ul>
       </nav>
     </header>
