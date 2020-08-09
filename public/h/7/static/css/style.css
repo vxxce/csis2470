@@ -1,3 +1,128 @@
-main {
-    margin: 1.5rem;
+/* import Questrial google font */
+@import url('https://fonts.googleapis.com/css?family=Questrial&display=swap');
+
+/* Remove margin/padding, init font defaults */
+:root, body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Questrial', Helvetica, Arial, sans-serif;
+  font-size: 16px;
+  line-height: 1.75rem;
+  background-color: #272727;
+  color: #f0f0f0;
 }
+
+/**
+ Mobile/small screen (< 800px)
+ */
+
+ /* Nav as grid */
+nav {
+  background-color: rgb(241, 241, 241);
+  display: grid;
+  grid-template-rows: auto auto;
+  grid-template-columns: 1fr;
+  align-items: center;
+  justify-items: center;
+}
+
+/* Button reveals menu */
+button#slide {
+  width: 100%;
+  border: none;
+  padding: 1rem;
+  margin: 0;
+  background: none;
+  font-size: 1.25rem;
+  color: #294b32;
+}
+
+span:hover {
+  color: #589b6a;
+}
+
+button#slide:active {
+  color: #503332;
+}
+
+/* Hide menu until revealed */
+ul#nav-list {
+  height: 0;
+  overflow: hidden;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  text-align: center;
+}
+
+li.nav-item {
+  padding: 0 0 0.75rem 0;
+  transition: letter-spacing ease 200ms;
+}
+
+li.nav-item:hover {
+  letter-spacing: 0.1rem;
+}
+
+a.nav-link {
+  text-decoration: none;
+  text-transform: uppercase;
+  color: #507b97;
+}
+
+a.nav-link:hover {
+  color: #79aaca;
+  cursor: pointer;
+}
+
+/**
+ * Main
+ */
+main {
+  padding: 2rem;
+}
+
+h1 {
+  margin: 0;
+  padding: 1rem;
+  border-bottom: 0.25rem solid #f0f0f0;
+  min-width: min-content;
+  max-width: max-content;
+}
+
+/**
+ * Mobile first. Break at 600px.
+ */
+@media (min-width: 600px) {
+
+  /* Switch from grid to flex */
+  nav {
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: center;
+    justify-content: flex-end;
+  }
+   /* Hide mobile menu button */
+  button#slide {
+    display: none;
+  }
+
+  ul#nav-list {
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: center;
+    justify-content: end;
+    height: 3.5rem;
+  }
+  
+  li.nav-item {
+    display: inline-block;
+    text-transform: uppercase;
+    font-size: 1.25rem;
+    padding: 1.25rem;
+  }
+
+}
+
+
+
