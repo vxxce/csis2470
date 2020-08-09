@@ -1,3 +1,23 @@
 main {
     margin: 1.5rem;
 }
+
+p {
+    font-family: 'Roboto', Helvetica, Arial, sans-serif;
+    padding: 1rem;
+    font-size: 1.3rem;
+}
+
+pre {
+    padding: 1rem;
+}
+
+h1 {
+    margin-bottom: 3rem;
+    font-size: 2rem;
+}
+
+button.btn {
+    background-color: #c1e0f3;
+    font-size: 1.2rem;
+}

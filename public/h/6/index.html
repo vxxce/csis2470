@@ -6,12 +6,85 @@
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Roboto&display=swap" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet"
+          id="bootstrap-css">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="/css/base.css">
+    <link rel="stylesheet" href="./static/css/style.css">
+    <!------ Include the above in your HEAD tag ---------->
     <title>H6 - Bootstrap Site</title>
+
+    <script>
+      $(document).ready(function () {
+        const questions = [
+          {
+            q: "Is the following a valid function expression?:<pre>const f = function someFunc() { };</pre>",
+            all: ["Yes", "No"],
+            a: "Yes"
+          },
+          {
+            q: "Which of the following methods accepts a comparator as an argument?",
+            all: ["Array.prototype.filter", "Array.prototype.map", "Array.prototype.reduce", "Array.prototype.flat"],
+            a: "Array.prototype.reduce"
+          },
+          {
+            q: "Which of the following is a common, defining feature of functional programming?",
+            all: ["Generator functions", "Internal iterators", "Private methods", "External iterators"],
+            a: "Internal iterators"
+          },
+          {
+            q: "What is the value of this expression?<pre>Object.entries({'key': 'val'})</pre>",
+            all: ["A 3-D array", "A 2-D array", "A 1-D array"],
+            a: "A 2-D array"
+          },
+        ]
+        const quiz = $('#quiz')
+       let curr = 0
+        let score = 0
+
+        const cleanUp = () => {
+          curr = 0
+          score = 0
+        }
+
+        const makeCard = answer => {
+          quiz.empty()
+          if (curr !== 0 && answer === questions[curr - 1].a) score += 1
+          if (curr >= questions.length) {
+            quiz.append(`<h3>You scored ${score} / 4</h3><button id="again" class="btn btn-lg btn-block">Start Over</button>`)
+            curr = 0
+            score = 0
+            return $('#again').click(function() {
+              return makeCard(0)
+            })
+          }
+          quiz.append(`<p>${questions[curr].q}</p>${questions[curr].all.reduce((a, v) => a.concat(`<button class="btn btn-lg btn-block">${v}</button>`), "")}`)
+          curr += 1
+          return $('button.btn').click(function() {
+            return makeCard($(this).text())
+          })
+        }
+
+        $('button.btn').click(makeCard)
+
+
+
+
+
+      })
+    </script>
 </head>
 <body>
+<main>
     <h1>H6 - Bootstrap Site</h1>
-    <main>
-
-    </main>
+    <div>
+        <div id="quiz" class="card col-12">
+            <button class="btn btn-lg btn-block">Start the Quiz!</button>
+        </div>
+    </div>
+</main>
+<script src="./js/script.js"></script>
 </body>
 </html>
