@@ -41,13 +41,8 @@
           },
         ]
         const quiz = $('#quiz')
-       let curr = 0
+        let curr = 0
         let score = 0
-
-        const cleanUp = () => {
-          curr = 0
-          score = 0
-        }
 
         const makeCard = answer => {
           quiz.empty()
@@ -66,25 +61,19 @@
             return makeCard($(this).text())
           })
         }
-
         $('button.btn').click(makeCard)
-
-
-
-
-
       })
     </script>
 </head>
-<body>
-<main>
-    <h1>H6 - Bootstrap Site</h1>
-    <div>
-        <div id="quiz" class="card col-12">
-            <button class="btn btn-lg btn-block">Start the Quiz!</button>
-        </div>
-    </div>
-</main>
-<script src="./js/script.js"></script>
-</body>
+    <body>
+        <main>
+            <h1>H6 - Bootstrap Site</h1>
+            <div>
+                <div id="quiz" class="card col-12">
+                    <button class="btn btn-lg btn-block">Start the Quiz!</button>
+                </div>
+            </div>
+        </main>
+        <script src="./js/script.js"></script>
+    </body>
 </html>
