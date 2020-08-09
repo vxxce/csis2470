@@ -3,3 +3,4 @@ db/
 */**/.idea/
 node_modules/
 .idea
+.cache
