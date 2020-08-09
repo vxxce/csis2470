@@ -1,10 +1,6 @@
-// Navigation Bar
-// ===============================
-
 // Constants for DOM elements
-const menuButton = document.querySelector('button#slide')
-const navList = document.querySelector('#nav-list');
-const label = document.querySelector('#menu-label')
+const menuButtons = [...document.querySelectorAll('button.slide')]
+const navLists = [...document.querySelectorAll('.nav-list')]
 
 // Function reveals mobile menu. "Slides" open or closed by setting transition duration
 // and changing height to 8rem (if opening) or 0 (if closing)
@@ -14,11 +10,11 @@ const slide = target => {
   target.style.transitionDuration = '500ms'
   target.style.height = target.offsetHeight + 'px'
   if (target.classList.contains('visible')) {
-    target.style.height = '10rem'
-    label.style.textDecoration = 'underline'
+    target.style.height = '9rem'
+    menuButtons.forEach(b => b.style.textDecoration = 'underline')
   } else {
     target.style.height = 0
-    label.style.textDecoration = 'none'
+    menuButtons.forEach(l => l.style.textDecoration = 'none')
   }
   // Clear transition after "slide" complete
   window.setTimeout(() => {
@@ -28,17 +24,23 @@ const slide = target => {
 }
 
 // Menu button (seen on small screens only), triggers "slide" function
-menuButton.addEventListener('click', () => slide(navList))
+menuButtons.forEach(b => b.addEventListener('click', e => {
+  slide(e.target.nextElementSibling)
+}))
 
 // Force navList height to handle interference between screen resizing and opened nav.
 window.addEventListener('resize', () => {
   if (window.innerWidth > 600) {
-    navList.style.height = '3.5rem'
+    navLists.forEach(n => n.style.height = '3.25rem')
+    menuButtons.forEach(b => b.style.display = 'none')
   } else {
-    navList.classList.remove('visible')
-    navList.style.height = 0
-    label.style.textDecoration = 'none'
+    navLists.forEach(n => n.classList.remove('visible'))
+    navLists.forEach(n => n.style.height = '0')
+    menuButtons.forEach(b => b.style.display = 'block')
+    menuButtons.forEach(b => b.style.textDecoration = 'none')
   }
 })
+
+window.addEventListener("load", () => menuButtons.forEach(b => b.style.display = (window.innerWidth < 600) ? 'block' : 'none'))
 
 //=================================

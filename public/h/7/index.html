@@ -2,29 +2,191 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" type="text/css" href="./static/css/style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://code.jquery.com/mobile/1.4.2/jquery.mobile-1.4.2.css">
+    <script src="https://code.jquery.com/jquery-1.9.1.js"></script>
+    <script src="https://code.jquery.com/mobile/1.4.2/jquery.mobile-1.4.2.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+          integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" href="./static/css/feedback.css">
+    <script src="./js/feedback.js"></script>
+    <link rel="stylesheet" type="text/css" href="./static/css/style.css">
 </head>
 
 <body>
-  <header id="navbar">
-    <nav>
-      <button id="slide">
-        <span id="menu-label">MENU</span>
-      </button>
-      <ul id="nav-list">
-        <li class="nav-item"><a class="nav-link" href="#">Home</a></li>
-        <li class="nav-item"><a class="nav-link" href="#">Destinations</a></li>
-        <li class="nav-item"><a class="nav-link" href="#">Packages</a></li>
-        <li class="nav-item"><a class="nav-link" href="#">Contact</a></li>
-      </ul>
-    </nav>
-  </header>
-  <main>
-    <h1>Life Outback</h1>
-  </main>
-  <script src="./js/navbar.js"></script>
+
+<div data-role="page" id="home">
+    <div data-role="header">
+        <nav>
+            <button class="slide">
+                MENU
+            </button>
+            <ul class="nav-list">
+                <li class="nav-item"><a class="nav-link" href="#destinations">Destinations</a></li>
+                <li class="nav-item"><a class="nav-link" href="#packages">Packages</a></li>
+                <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+            </ul>
+        </nav>
+    </div>
+    <div data-role="main" class="ui-content">
+        <img src="./static/img/life.png" alt="Life Outback">
+        <article>
+            <h1>LOREM IPSUM</h1>
+            <p>
+                Dignissim sodales ut eu sem integer vitae justo eget. Mauris vitae ultricies leo integer.
+                Id volutpat lacus laoreet non curabitur gravida arcu ac tortor. Senectus et netus et
+                malesuada fames. Mattis enim ut tellus elementum sagittis. Sed turpis
+                tincidunt id aliquet risus feugiat in ante.
+            </p>
+            <p>
+                Mauris rhoncus aenean vel elit scelerisque mauris. Consequat interdum varius sit amet mattis.
+                Feugiat scelerisque varius morbi enim. Vitae congue eu consequat ac felis donec.
+                Nec feugiat in fermentum posuere. Volutpat ac tincidunt vitae semper quis.
+                Nullam eget felis eget nunc lobortis mattis aliquam.
+            </p>
+        </article>
+    </div>
+    <div data-role="footer">
+    </div>
+</div>
+
+<!--page one-->
+<div data-role="page" id="destinations">
+    <div data-role="header">
+        <nav>
+            <button class="slide">
+                MENU
+            </button>
+            <ul class="nav-list">
+                <li class="nav-item"><a class="nav-link" href="#destinations">Destinations</a></li>
+                <li class="nav-item"><a class="nav-link" href="#packages">Packages</a></li>
+                <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+            </ul>
+        </nav>
+    </div>
+    <div data-role="main" class="ui-content">
+        <div id="destinations-gallery">
+            <figure>
+                <figcaption>Switzerland</figcaption>
+                <img src="https://www.worldtravelguide.net/wp-content/uploads/2017/03/shu-Romania-Transylvania-Peles-494393290-1440x823.jpg"
+                     alt="Romania">
+            </figure>
+            <figure>
+                <figcaption>Switzerland</figcaption>
+                <img src="https://handluggageonly.co.uk/wp-content/uploads/2014/10/Hand-Luggage-Only-2.jpg"
+                     alt="Switzerland">
+            </figure>
+            <figure>
+                <figcaption>Utah</figcaption>
+                <img src="https://natureconservancy-h.assetsadobe.com/is/image/content/dam/tnc/nature/en/photos/tnc_99771908.jpg?crop=240,0,2400,1320&wid=4000&hei=2200&scl=0.6"
+                     alt="Utah">
+            </figure>
+            <figure>
+                <figcaption>Japan</figcaption>
+                <img src="https://cdn-image.travelandleisure.com/sites/default/files/styles/1600x1000/public/1505757741/tokyo-japan-tower-view-apartment-rental-BNBTOKYO0917.jpg?itok=hr3949Ak"
+                     alt="Japan">
+            </figure>
+        </div>
+        <article>
+            <h1>Destinations</h1>
+            <p>
+                Dignissim sodales ut eu sem integer vitae justo eget. Mauris vitae ultricies leo integer.
+                Id volutpat lacus laoreet non curabitur gravida arcu ac tortor. Senectus et netus et
+                malesuada fames. Mattis enim ut tellus elementum sagittis. Sed turpis
+                tincidunt id aliquet risus feugiat in ante.
+            </p>
+            <p>
+                Mauris rhoncus aenean vel elit scelerisque mauris. Consequat interdum varius sit amet mattis.
+                Feugiat scelerisque varius morbi enim. Vitae congue eu consequat ac felis donec.
+                Nec feugiat in fermentum posuere. Volutpat ac tincidunt vitae semper quis.
+                Nullam eget felis eget nunc lobortis mattis aliquam.
+            </p>
+        </article>
+    </div>
+    <div data-role="footer">
+    </div>
+</div>
+
+<!--page two-->
+<div data-role="page" id="packages">
+    <div data-role="header">
+        <nav>
+            <button class="slide">
+                MENU
+            </button>
+            <ul class="nav-list">
+                <li class="nav-item"><a class="nav-link" href="#destinations">Destinations</a></li>
+                <li class="nav-item"><a class="nav-link" href="#packages">Packages</a></li>
+                <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+            </ul>
+        </nav>
+    </div>
+    <div data-role="main" class="ui-content">
+        <article>
+            <h1>Packages</h1>
+            <p>
+                Mauris rhoncus aenean vel elit scelerisque mauris. Consequat interdum varius sit amet mattis.
+                Feugiat scelerisque varius morbi enim. Vitae congue eu consequat ac felis donec.
+                Nec feugiat in fermentum posuere. Volutpat ac tincidunt vitae semper quis.
+                Nullam eget felis eget nunc lobortis mattis aliquam.
+            </p>
+        </article>
+    </div>
+    <div data-role="footer">
+    </div>
+</div>
+
+<!--page four-->
+<div data-role="page" id="about">
+    <div data-role="header">
+        <nav>
+            <button class="slide">
+                MENU
+            </button>
+            <ul class="nav-list">
+                <li class="nav-item"><a class="nav-link" href="#destinations">Destinations</a></li>
+                <li class="nav-item"><a class="nav-link" href="#packages">Packages</a></li>
+                <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+            </ul>
+        </nav>
+    </div>
+    <div data-role="main" class="ui-content">
+        <div id="feedback">
+            <div id="feedback-form" style='display:none;' class="col-xs-4 col-md-4 panel panel-default">
+                <form method="POST" action="" class="form panel-body" role="form">
+                    <div class="form-group">
+                        <input class="form-control" name="email" autofocus placeholder="Your e-mail" type="email"/>
+                    </div>
+                    <div class="form-group">
+                        <textarea class="form-control" name="body" required placeholder="Questions? Let us know!"
+                                  rows="5"></textarea>
+                    </div>
+                    <button class="btn btn-primary pull-right" type="submit">Send</button>
+                </form>
+            </div>
+            <div id="feedback-tab">CONTACT</div>
+        </div>
+        <article>
+            <h1>About Us</h1>
+            <p>
+                Dignissim sodales ut eu sem integer vitae justo eget. Mauris vitae ultricies leo integer.
+                Id volutpat lacus laoreet non curabitur gravida arcu ac tortor. Senectus et netus et
+                malesuada fames. Mattis enim ut tellus elementum sagittis. Sed turpis
+                tincidunt id aliquet risus feugiat in ante.
+            </p>
+            <p>
+                Mauris rhoncus aenean vel elit scelerisque mauris. Consequat interdum varius sit amet mattis.
+                Feugiat scelerisque varius morbi enim. Vitae congue eu consequat ac felis donec.
+                Nec feugiat in fermentum posuere. Volutpat ac tincidunt vitae semper quis.
+                Nullam eget felis eget nunc lobortis mattis aliquam.
+            </p>
+        </article>
+    </div>
+    <div data-role="footer">
+    </div>
+</div>
+<script src="./js/navbar.js"></script>
 </body>
 
 </html>

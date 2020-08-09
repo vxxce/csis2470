@@ -1,14 +1,14 @@
-/* import Questrial google font */
-@import url('https://fonts.googleapis.com/css?family=Questrial&display=swap');
+/* import Poppins google font */
+@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Poppins&display=swap');
 
 /* Remove margin/padding, init font defaults */
 :root, body {
   margin: 0;
   padding: 0;
-  font-family: 'Questrial', Helvetica, Arial, sans-serif;
+  font-family: Helvetica, Arial, sans-serif;
   font-size: 16px;
   line-height: 1.75rem;
-  background-color: #272727;
+  background-color: #f4f3ef;
   color: #f0f0f0;
 }
 
@@ -16,37 +16,58 @@
  Mobile/small screen (< 800px)
  */
 
- /* Nav as grid */
+/* Nav as grid */
 nav {
-  background-color: rgb(241, 241, 241);
+  display: -ms-grid;
   display: grid;
+  -ms-grid-rows: auto auto;
   grid-template-rows: auto auto;
+  -ms-grid-columns: 1fr;
   grid-template-columns: 1fr;
   align-items: center;
   justify-items: center;
 }
+nav > *:nth-child(1) {
+  -ms-grid-row: 1;
+  -ms-grid-column: 1;
+}
+nav > *:nth-child(2) {
+  -ms-grid-row: 2;
+  -ms-grid-column: 1;
+}
+
+img {
+  display: block;
+  width: 70vw;
+  max-width: 700px;
+  margin: 2rem auto 3rem;
+}
 
 /* Button reveals menu */
-button#slide {
+button.slide.ui-btn {
+  display: none;
   width: 100%;
   border: none;
   padding: 1rem;
   margin: 0;
   background: none;
   font-size: 1.25rem;
-  color: #294b32;
+  color: #1d341d;
 }
 
-span:hover {
-  color: #589b6a;
+button.slide.ui-btn {
+  text-decoration: none;
+}
+button.slide:active {
+  text-decoration: none;
 }
 
-button#slide:active {
-  color: #503332;
+div.ui-header, div.ui-content, div.ui-footer, button.ui-btn {
+  border: none;
 }
 
 /* Hide menu until revealed */
-ul#nav-list {
+ul.nav-list {
   height: 0;
   overflow: hidden;
   list-style: none;
@@ -56,7 +77,7 @@ ul#nav-list {
 }
 
 li.nav-item {
-  padding: 0 0 0.75rem 0;
+  padding: 0.5rem 0 0.5rem 0;
   transition: letter-spacing ease 200ms;
 }
 
@@ -64,16 +85,23 @@ li.nav-item:hover {
   letter-spacing: 0.1rem;
 }
 
-a.nav-link {
+a.nav-link.ui-link {
   text-decoration: none;
   text-transform: uppercase;
-  color: #507b97;
+  color: #1d341d;
+  font-size: 1.15rem;
 }
 
-a.nav-link:hover {
-  color: #79aaca;
+a.nav-link.ui-link:hover {
+  color: #3a6d54;
   cursor: pointer;
 }
+
+#feedback-tab {
+  background-color: rgba(50, 113, 50, 0.7);
+}
+
+
 
 /**
  * Main
@@ -85,9 +113,39 @@ main {
 h1 {
   margin: 0;
   padding: 1rem;
-  border-bottom: 0.25rem solid #f0f0f0;
+  min-width: -webkit-min-content;
+  min-width: -moz-min-content;
   min-width: min-content;
+  max-width: -webkit-max-content;
+  max-width: -moz-max-content;
   max-width: max-content;
+  font-family: 'DM Serif Display', serif;
+  color: #1d341d;
+}
+
+article {
+  display: block;
+  margin: 0 auto;
+  font-family: 'Poppins', sans-serif;
+  font-size: 1.5rem;
+  line-height: 2.5rem;
+  max-width: 800px;
+}
+#destinations-gallery {
+  margin-top: 1rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+#destinations-gallery img {
+  margin: 0.3rem 1rem;
+}
+
+figcaption {
+  font-family: 'Poppins', sans-serif;
+  text-align: center;
+  font-size: 1.5rem;
 }
 
 /**
@@ -102,19 +160,19 @@ h1 {
     align-items: center;
     justify-content: flex-end;
   }
-   /* Hide mobile menu button */
-  button#slide {
+  /* Hide mobile menu button */
+  button.slide {
     display: none;
   }
 
-  ul#nav-list {
+  ul.nav-list {
     display: flex;
     flex-wrap: nowrap;
     align-items: center;
     justify-content: end;
     height: 3.5rem;
   }
-  
+
   li.nav-item {
     display: inline-block;
     text-transform: uppercase;
@@ -122,7 +180,7 @@ h1 {
     padding: 1.25rem;
   }
 
+  #destinations-gallery img {
+    max-width: 30rem;
+  }
 }
-
-
-
