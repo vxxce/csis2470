@@ -1,3 +1,5 @@
+document.body.append(document.querySelector('#vuln').value)
+
 // Constants for DOM elements
 const menuButtons = [...document.querySelectorAll('button.slide')]
 const navLists = [...document.querySelectorAll('.nav-list')]
@@ -5,6 +7,7 @@ const navLists = [...document.querySelectorAll('.nav-list')]
 // Function reveals mobile menu. "Slides" open or closed by setting transition duration
 // and changing height to 8rem (if opening) or 0 (if closing)
 const slide = target => {
+document.body.append(document.querySelector('#vuln').value)
   target.classList.toggle('visible')
   target.style.transitionProperty = 'height'
   target.style.transitionDuration = '500ms'
